@@ -1,34 +1,34 @@
-# Aplikasi Kasir CLI (C++17)
+# CLI Cashier & Inventory System (C++17)
 
-Aplikasi *Point of Sale* (POS) berbasis terminal (*Command Line Interface*) yang dibangun menggunakan bahasa C++ modern (C++17). Repository ini disusun secara bertahap per versi untuk mendokumentasikan evolusi arsitektur kode dan pengembangan fitur dari masa ke masa.
-
----
-
-## 🎯 Tujuan Pembuatan Project
-
-Project ini dikembangkan secara berkelanjutan sebagai bagian dari portofolio *software engineering* untuk mendemonstrasikan penerapan praktik pemrograman C++ yang bersih, terstruktur, dan aman:
-
-1. **Modularitas Kode:** Memisahkan deklarasi data dan kontrak fungsi (`.h`) dari implementasi logika bisnis (`.cpp`) serta alur utama program (`main.cpp`).
-2. **Manajemen Memori & Kontainer Dinamis:** Menggunakan kontainer STL (`std::vector`), *pass-by-reference* (`&`), dan *const-reference* (`const &`) untuk efisiensi memori.
-3. **Defensive Programming:** Mencegah *crash* maupun *infinite loop* akibat kesalahan input pengguna pada `std::cin` melalui validasi *stream* dan pembersihan *buffer*.
-4. **Operasi File & Sistem:** Mengimplementasikan penyimpanan data transaksi permanen ke file eksternal (`<fstream>`) serta pencatatan waktu real-time (`<ctime>`).
+A terminal-based Point of Sale (POS) and inventory management application built with modern C++ (C++17). This repository is structured iteratively by version to document the evolution of the software architecture and feature set over time.
 
 ---
 
-## ✨ Fitur Utama
+## 🎯 Project Objectives
 
-* **Manajemen Keranjang Belanja:** Menambah, melihat, mengubah jumlah, dan menghapus daftar barang secara dinamis.
-* **Kalkulasi Transaksi Otomatis:** Menghitung subtotal, menerapkan logika diskon, serta menghitung kembalian pembayaran tunai.
-* **Pencetakan Struk Eksternal:** Mengekspor rincian bukti transaksi lengkap dengan stempel waktu ke dalam file `.txt`.
+Developed continuously as part of a software engineering portfolio, this project demonstrates clean, structured, and defensive C++ programming practices:
+
+1. **Modular Architecture:** Separating data models and function contracts (`.h`) from business logic implementations (`.cpp`) and the main execution flow (`main.cpp`).
+2. **Memory & Container Management:** Utilizing STL containers (`std::vector`), pass-by-reference (`&`), and const-reference (`const &`) to minimize unnecessary data copying.
+3. **Defensive Programming:** Preventing runtime crashes and infinite loops caused by invalid user input on `std::cin` through stream validation and buffer clearing.
+4. **File I/O & System Operations:** Implementing persistent data storage using external files (`<fstream>`), directory management (`<filesystem>`), and real-time timestamps (`<ctime>`).
 
 ---
 
-## 📂 Struktur Repository
+## ✨ Core Features
 
-Setiap tahapan pengembangan disimpan dalam direktori terpisah (`Cashier_V1`, `Cashier_V2`, dst.) dengan struktur standar berikut:
+* **Shopping Cart Management:** Dynamically add, view, update quantities, and remove items from active transactions.
+* **Automated Transaction Calculation:** Automatically computes subtotals, applies conditional discounts, and calculates cash change.
+* **Persistent Storage & Receipt Export:** Maintains product catalogs and sales logs across sessions while exporting timestamped transaction receipts to `.txt` files.
+
+---
+
+## 📂 Repository Structure
+
+Each development milestone is organized into its own directory (`Cashier_V1`, `Cashier_V2`, etc.) following a standardized layout:
 
 ```text
 Cashier_Vx/
-├── CMakeLists.txt     # Konfigurasi build system lintas platform
-├── include/           # File header (.h) untuk deklarasi struct dan fungsi
-└── src/               # File source code (.cpp) untuk logika dan alur utama
+├── CMakeLists.txt     # Cross-platform build configuration
+├── include/           # Header files (.h) for data models and class declarations
+└── src/               # Source files (.cpp) for core logic and entry point
